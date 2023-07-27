@@ -1,6 +1,6 @@
 import os
 import keyboard
-from minesweaper import Minesweeper
+from minesweeper import Minesweeper
 
 
 class Game:
@@ -53,16 +53,16 @@ class Game:
                 match key.name:
                     case "up":
                         if self.marker_y != 0:
-                        self.marker_y -= 1  # Handle the marker moving up
+                            self.marker_y -= 1  # Handle the marker moving up
                     case "down":
                         if self.marker_y != self.size - 1:
-                        self.marker_y += 1  # Handle the marker moving down
+                            self.marker_y += 1  # Handle the marker moving down
                     case "left":
                         if self.marker_x != 0:
-                        self.marker_x -= 1  # Handle the marker moving left
+                            self.marker_x -= 1  # Handle the marker moving left
                     case "right":
                         if self.marker_x != self.size - 1:
-                        self.marker_x += 1  # Handle the marker moving right
+                            self.marker_x += 1  # Handle the marker moving right
                     case "f": 
                         print('F')  # Handle flag placing, not ready
                     case "space": 
