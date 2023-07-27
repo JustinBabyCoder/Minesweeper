@@ -1,34 +1,36 @@
-This is a README file for a Minesweeper project implemented in Python. The project consists of three files: minesweeper.py, game.py, and main.py.
+# Minesweeper
+# ENG
+This is a simple, console-based implementation of the classic Minesweeper game. It is achieved using Python. The game consists of 3 files:
 
-File 1: minesweeper.py
-This file contains the implementation of the Minesweeper class. The class represents the Minesweeper game and includes methods for initializing the game, setting mines, defining a cell, opening cells, and drawing the field.
+**Minesweeper.py (File 1)**: This file is responsible for creating the Minesweeper field, placing mines and assigning numbers to the cells. Here's what it does:
 
-File 2: game.py
-This file contains the implementation of the Game class. The class represents the game itself and includes methods for initializing the game, handling user input, updating the game state, and drawing the game field.
+- Sets up a grid of specified size, with a range limit of 10 to 20.
+- Places mines on the grid, the number of which is based on the size of the grid as well as the difficulty level.
+- Assigns numbers to each non-mine cell, representing how many neighboring cells contain mines.
 
-File 3: main.py
-This file serves as the entry point for running the Minesweeper game. It imports the Game class from game.py, instantiates the class, and calls the play() method to start the game.
+**game.py (File 2)**: This file is where the main gameplay occurs. It contains class Game with several methods for different game operations like digging (uncovering a cell), putting flags, validating the win or lose conditions, and displaying the game grid.
 
-How to Run the Game
-To run the Minesweeper game, follow these steps:
+- Retrieves the user's preferred field size and difficulty level for the game.
+- Dynamically assigns flags corresponding to the number of mines.
+- Monitors user input for navigating through the game grid, placing flags or uncovering cells.
 
-Make sure you have Python installed on your machine.
-Download or clone the repository containing the project files.
-Open a terminal or command prompt and navigate to the directory where the project files are located.
-Run the following command to start the game: python main.py
+**main.py (File 3)**: This is the initiation file. Here, an instance of the Game class from game.py is created and the `play()` method is called to start the game. It is the entrypoint for the entire game.
 
-Follow the on-screen instructions to enter the field size and difficulty level.
-Once the game starts, use the arrow keys to move the marker and press the spacebar to dig. The goal of the game is to uncover all the cells without hitting a mine.
-Enjoy playing Minesweeper!
-Note: The game is currently a work in progress. Some features, such as flag placement, are not yet implemented.
+The visual representation of the game grid, player’s progress, and end game notifications are all managed and provided in the console.
 
-Contributing
-If you would like to contribute to this Minesweeper project, feel free to open an issue or submit a pull request on the project's repository. Your contributions are welcome and will be greatly appreciated.
+## Setup Instructions:
+To set up the game, follow these steps:
+- Clone the repository: `git clone <repository_link>`
+- Navigate to the directory containing the files: `cd Minesweeper`
+- Run the entrypoint script: `python main.py`
 
-License
-This Minesweeper project is licensed under the MIT License. You are free to modify, distribute, and use the code in any way you like. Refer to the LICENSE file for more information.
+Have fun playing Minesweeper from your console!
 
-Acknowledgments
-The project is implemented using Python.
-The game logic was inspired by the classic Minesweeper game.
-The project uses the keyboard library for handling keyboard events.
+## Dependencies:
+Make sure you have the 'keyboard' python package installed. If not, use `pip install keyboard` to install it.
+
+## Contributing:
+Contributions are welcome! Please fork the repository and make changes as you'd like. Pull requests are encouraged.
+
+## License:
+This project is licensed under the terms of the MIT license. 
