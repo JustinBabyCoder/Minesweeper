@@ -5,11 +5,16 @@ class Minesweeper:
 
     def __init__(self, size, difficulty):
         self.size = size  # Establish the size of the minesweeper grid
+        if self.size < 10: self.size = 10
+        elif self.size > 20: self.size = 20
+
         self.mine_symbol = 'B'  # Indicator for a mine
         self.mines_count = None  # Initialized mines_count which will later be used to store the number of mines
         self.difficulty = difficulty # Define game difficulty
+        if self.difficulty < 1: self.difficulty = 1
+        elif self.difficulty > 3: self.difficulty = 3
 
-        self.field = [[[] for i in range(size)] for i in range(size)]  # Create the playing field as a 2D list                                     
+        self.field = [[[] for i in range(self.size)] for i in range(self.size)]  # Create the playing field as a 2D list                                     
 
         self.unused_cells = []  # Cells positions without bombs, yet to be initialised
         self.mines_pos = self.__set_mines()  # Initialize mines on the field and store their positions 
@@ -46,6 +51,9 @@ class Minesweeper:
             if i in self.mines_pos:
                 cell_num += 1
 
+        if cell_num == 0:
+            cell_num = ' '
+
         # Returns the number of mines surrounding the cell
         return cell_num 
 
@@ -56,8 +64,3 @@ class Minesweeper:
                 if self.field[i][j] != self.mine_symbol:  
                     cell = self.__define_cell(i, j)
                     self.field[i][j] = str(cell)
-
-    def __draw_field(self):
-        # Display the current state of the field when called
-        for i in self.field:
-            print(*i)
